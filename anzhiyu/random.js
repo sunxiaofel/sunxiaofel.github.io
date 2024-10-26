@@ -1,3 +1,3 @@
-var posts=["2024/10/24/hello-world/","2024/10/25/newpost-1/","2024/10/25/newpost/"];function toRandomPost(){
+var posts=["2024/10/26/快速搭建个人博客：Hexo-GitHub-Pages-Cloudflare-Pages-完整指南/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
