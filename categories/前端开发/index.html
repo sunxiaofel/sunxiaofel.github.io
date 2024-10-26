@@ -306,11 +306,11 @@ queueMicrotask(() => {
       el: '#vcomment',
       appId: 'WtSfbzaawbf5iLtxt56NZVnJ-gzGzoHsz',
       appKey: 'RC4Zb3aKya2KO7yLVts6jHUx',
-      avatar: 'wavatar',
+      avatar: 'robohash',
       serverURLs: '',
       emojiMaps: "",
       path: window.location.pathname,
-      visitor: false
+      visitor: true
     }, null))
   }
 
@@ -322,8 +322,8 @@ queueMicrotask(() => {
     }
   }
 
-  if ('Valine' === 'Valine' || !true) {
-    if (true) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
     else setTimeout(loadValine, 0)
   } else {
     window.loadOtherComment = loadValine
@@ -345,7 +345,7 @@ queueMicrotask(() => {
 
   const getIcon = (icon, mail) => {
     if (icon) return icon
-    let defaultIcon = '?d=wavatar'
+    let defaultIcon = '?d=robohash'
     let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
     return iconUrl
   }
