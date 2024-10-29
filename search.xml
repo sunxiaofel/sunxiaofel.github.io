@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>突破次元壁！轻松上手 VPN 节点搭建</title>
+      <link href="/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/"/>
+      <url>/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本教程仅用于<strong>技术学习</strong>和<strong>研究</strong>目的，作者<strong>不鼓励</strong>或<strong>支持</strong>任何形式的违法活动。请<strong>遵守</strong>您所在国家或地区的相关法律法规，不得利用本教程内容从事任何侵犯他人合法权益或破坏网络安全的行为。</p><p>使用 VPN 服务可能涉及访问受限制或监管的内容，用户应<strong>自行</strong>承担相应风险和责任。我们<strong>不对</strong>使用本教程后产生的任何后果负责。</p><h1 id="突破次元壁！轻松上手-VPN-节点搭建"><a href="#突破次元壁！轻松上手-VPN-节点搭建" class="headerlink" title="突破次元壁！轻松上手 VPN 节点搭建"></a>突破次元壁！轻松上手 VPN 节点搭建</h1><h2 id="步骤一：购买-VPS"><a href="#步骤一：购买-VPS" class="headerlink" title="步骤一：购买 VPS"></a>步骤一：购买 VPS</h2><p>个人推荐：<a href="https://my.racknerd.com/index.php?rp=/store/shared-hosting">RackNerd</a></p><table><thead><tr><th>内存</th><th>CPU</th><th>SSD</th><th>流量</th><th>价格</th><th>购买网址</th><th>备注</th></tr></thead><tbody><tr><td>1.0 G</td><td>1 核</td><td>17G</td><td>3T&#x2F;月</td><td>$10.98&#x2F;年</td><td><a href="https://my.racknerd.com/cart.php?a=confproduct&i=0">链接</a></td><td>最新特惠</td></tr></tbody></table><p><strong>服务器地址</strong><br>Chicago, IL(Test IP: 198.23.228.15)<br>Atlanta (Test 1P: 107.173.164.160)<br>NewYork（TestIP:192.3.81.8)<br>Dallas,TX(Test IP: 198.23.249.100)<br>Seattle(TestIP: 192.3.253.2)<br>San Jose, CA (Test IP: 192.210.207.88)<br>Strasbourg, France (Test IP: 45.95.173.2) $5.99 USD</p><p>可以根据服务器 ip 自己 ping 一下 看一下 ms 高不高</p><p><strong>测试工具</strong></p><p>打开网站 <a href="https://www.itdog.cn/ping/">IP 延迟速度 测试工具</a><br>输入 vps 的 ip 地址, 点击 “单次测试”<br>如果一片红色(正红色)就需要换 IP</p><p><strong>推荐位置</strong></p><p>San Jose 或 Seattle</p><hr><p>购买完成后，可以在服务商后台找到以下信息：</p><ul><li><strong>IP 地址</strong>：服务器 IP</li><li><strong>端口</strong>：服务器端口</li><li><strong>用户名</strong>：服务器用户名</li><li><strong>密码</strong>：服务器密码</li></ul><p>这些信息将在连接 VPS 时用到。</p><h2 id="步骤二：连接服务器"><a href="#步骤二：连接服务器" class="headerlink" title="步骤二：连接服务器"></a>步骤二：连接服务器</h2><p>您可以使用 FinalShell 或系统自带的终端工具来连接服务器。这里提供一些 FinalShell 的下载地址：</p><ul><li><strong>Windows 64 位</strong>：[点我下载]</li><li><strong>macOS ARM 版</strong>（适用于 M1、M2、M3 芯片）：[点我下载]</li><li><strong>macOS X64 版</strong>（适用于旧款 Intel CPU）：[点我下载]</li></ul><p>连接命令如下（替换为您 VPS 的信息）：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@服务器ip -p 服务器端口</span><br></pre></td></tr></table></figure><p>当您看到提示 <code>[root@racknerd-67a80b3 ~]#</code>，表示连接成功。</p><h2 id="步骤三：安装-X-UI-管理面板"><a href="#步骤三：安装-X-UI-管理面板" class="headerlink" title="步骤三：安装 X-UI 管理面板"></a>步骤三：安装 X-UI 管理面板</h2><p>连接成功后，使用以下命令安装 X-UI：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/956bf85bbac978d56c0e319c5fac2d6db7df9564/install.sh) 0.3.4.4</span><br></pre></td></tr></table></figure><p>按照提示依次输入：</p><ol><li><code>y</code></li><li>自定义用户名</li><li>自定义密码</li><li>选择一个小于 60000 的已放行端口</li></ol><p>安装完成后，在浏览器中访问 <code>服务器IP地址:自定义端口</code>，打开 X-UI 管理界面。输入您设置的用户名和密码进行登录。</p><h2 id="步骤四：配置-VPN-节点"><a href="#步骤四：配置-VPN-节点" class="headerlink" title="步骤四：配置 VPN 节点"></a>步骤四：配置 VPN 节点</h2><h3 id="方法一：Vmess-WS-节点"><a href="#方法一：Vmess-WS-节点" class="headerlink" title="方法一：Vmess + WS 节点"></a>方法一：Vmess + WS 节点</h3><ol><li>在 X-UI 管理界面中打开“入站列表”。</li><li>选择“添加入站”，并设置以下选项：<ul><li><strong>备注</strong>：vmess+ws</li><li><strong>协议</strong>：选择 vmess</li></ul></li><li>添加用户后，将网络设置为 <strong>ws</strong>。</li><li>复制 <code>user id</code> 中的一段粘贴到路径字段中。</li><li>点击“添加”完成配置。</li></ol><p>至此，Vmess + WS 节点已配置完成。</p><h3 id="方法二：Vless-Vision-Reality-节点"><a href="#方法二：Vless-Vision-Reality-节点" class="headerlink" title="方法二：Vless + Vision + Reality 节点"></a>方法二：Vless + Vision + Reality 节点</h3><ol><li>在“入站列表”中选择“添加入站”，并配置以下选项：<ul><li><strong>备注</strong>：vless+vision+reality</li><li><strong>端口</strong>：443</li></ul></li><li>添加用户后，开启 <strong>reality</strong>。</li><li>将 <code>flow</code> 设置为 <code>xtls-rprx-vision</code>。</li><li>目标网站设置为 <code>1.1.1.1:443</code>。</li><li>复制 <code>user id</code> 的前一部分，粘贴到“可选域名”中，并在末尾加上 <code>.com</code>。</li><li>点击“添加”完成配置。</li></ol><p>至此，Vless + Vision + Reality 节点也已配置完成。</p><h2 id="步骤五：检测端口状态"><a href="#步骤五：检测端口状态" class="headerlink" title="步骤五：检测端口状态"></a>步骤五：检测端口状态</h2><p>为了确保端口未被封锁，可以访问以下地址进行检测：</p><ul><li><a href="https://tcp.ping.pe/ip:%E7%AB%AF%E5%8F%A3">https://tcp.ping.pe/ip:端口</a></li></ul><hr><p>以上就是 VPN 节点搭建的详细步骤，希望对您有所帮助。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+          <category> VPN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> VPN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何使用使用Google Email发送邮件</title>
+      <link href="/2024/10/29/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Google-Email%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
+      <url>/2024/10/29/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Google-Email%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在本教程中，我们将详细讲解如何通过 Google Email（Gmail）向外发送邮件，包括如何进行 SMTP 配置、生成 App 密码以及一些常见问题的解决方法。适合初学者快速上手。</p><hr><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol><li><strong>确保启用两步验证</strong>：为了确保账户的安全，Google 要求启用两步验证才能使用 SMTP 发送邮件。</li><li><strong>申请 App 专用密码</strong>：由于常规的 Google 密码无法直接用于 SMTP 配置，需申请一个专门的 App 密码。</li></ol><hr><h2 id="步骤一：启用两步验证"><a href="#步骤一：启用两步验证" class="headerlink" title="步骤一：启用两步验证"></a>步骤一：启用两步验证</h2><ol><li>登录你的 Gmail 账号。</li><li>点击右上角的头像，进入“<strong>管理您的 Google 账户</strong>”。</li><li>在左侧找到“<strong>安全</strong>”选项卡。</li><li>在“两步验证”选项中，点击“<strong>启用</strong>”，并按照提示完成设置。</li></ol><hr><h2 id="步骤二：生成-App-密码"><a href="#步骤二：生成-App-密码" class="headerlink" title="步骤二：生成 App 密码"></a>步骤二：生成 App 密码</h2><ol><li>返回“<strong>安全</strong>”页面，找到“<strong>App 密码</strong>”。</li><li>输入 Google 账户的登录密码以验证身份。</li><li>在“选择应用程序”下拉列表中选择“<strong>邮件</strong>”，设备类型选择“<strong>其他</strong>”，可以自定义一个名字（例如：SMTP）。</li><li>点击“<strong>生成</strong>”按钮，系统会为你生成一个 16 位的 App 专用密码。<strong>保存此密码</strong>，稍后会在配置 SMTP 时用到。</li></ol><hr><h2 id="步骤三：配置-SMTP-信息"><a href="#步骤三：配置-SMTP-信息" class="headerlink" title="步骤三：配置 SMTP 信息"></a>步骤三：配置 SMTP 信息</h2><p>使用 Gmail SMTP 发送邮件需要以下信息：</p><ul><li><strong>SMTP 服务器</strong>：smtp.gmail.com</li><li><strong>端口号</strong>：587（TLS）或 465（SSL）</li><li><strong>SSL&#x2F;TLS 加密</strong>：是</li><li><strong>用户名</strong>：你的 Gmail 邮箱地址</li><li><strong>密码</strong>：上一步生成的 App 密码</li></ul><p>在代码中可以这样配置（假设使用的是 Node.js）：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nodemailer = <span class="built_in">require</span>(<span class="string">&quot;nodemailer&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> transporter = nodemailer.<span class="title function_">createTransport</span>(&#123;</span><br><span class="line">  <span class="attr">host</span>: <span class="string">&quot;smtp.gmail.com&quot;</span>,</span><br><span class="line">  <span class="attr">port</span>: <span class="number">587</span>, <span class="comment">// 使用TLS</span></span><br><span class="line">  <span class="attr">secure</span>: <span class="literal">false</span>, <span class="comment">// true for 465, false for other ports</span></span><br><span class="line">  <span class="attr">auth</span>: &#123;</span><br><span class="line">    <span class="attr">user</span>: <span class="string">&quot;your-email@gmail.com&quot;</span>, <span class="comment">// 你的Gmail地址</span></span><br><span class="line">    <span class="attr">pass</span>: <span class="string">&quot;your-app-password&quot;</span>, <span class="comment">// 上一步生成的App密码</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送邮件</span></span><br><span class="line"><span class="keyword">const</span> mailOptions = &#123;</span><br><span class="line">  <span class="attr">from</span>: <span class="string">&quot;your-email@gmail.com&quot;</span>,</span><br><span class="line">  <span class="attr">to</span>: <span class="string">&quot;recipient@example.com&quot;</span>,</span><br><span class="line">  <span class="attr">subject</span>: <span class="string">&quot;Hello from Gmail&quot;</span>,</span><br><span class="line">  <span class="attr">text</span>: <span class="string">&quot;This is a test email sent from a Node.js app using Gmail SMTP.&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">transporter.<span class="title function_">sendMail</span>(mailOptions, <span class="function">(<span class="params">error, info</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (error) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;邮件发送成功: %s&quot;</span>, info.<span class="property">messageId</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Google Email </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>telegraph-Image：搭建你的专属开源图床</title>
       <link href="/2024/10/27/telegraph-Image%EF%BC%9A%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%93%E5%B1%9E%E5%BC%80%E6%BA%90%E5%9B%BE%E5%BA%8A/"/>
       <url>/2024/10/27/telegraph-Image%EF%BC%9A%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E4%B8%93%E5%B1%9E%E5%BC%80%E6%BA%90%E5%9B%BE%E5%BA%8A/</url>
@@ -12,6 +68,8 @@
       
       
       <categories>
+          
+          <category> 技术教程 </category>
           
           <category> 项目 </category>
           
@@ -37,6 +95,8 @@
       
       
       <categories>
+          
+          <category> 技术教程 </category>
           
           <category> 前端 </category>
           
