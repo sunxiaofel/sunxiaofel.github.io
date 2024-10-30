@@ -3,8 +3,15 @@
 
 
     <url>
+        <loc>https://sunxiaofel.github.io/tags/VPN/</loc>
+        <lastmod>2024-10-30T07:47:06.093Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sunxiaofel.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2024-10-29T11:42:45.984Z</lastmod>
+        <lastmod>2024-10-30T07:47:06.093Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -12,13 +19,6 @@
     <url>
         <loc>https://sunxiaofel.github.io/tags/Google/</loc>
         <lastmod>2024-10-29T11:42:45.984Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sunxiaofel.github.io/tags/VPN/</loc>
-        <lastmod>2024-10-29T05:58:39.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
