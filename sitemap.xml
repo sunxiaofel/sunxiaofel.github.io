@@ -110,6 +110,20 @@
 
   
   <url>
+    <loc>https://sunxiaofel.github.io/tags/Google/</loc>
+    <lastmod>2024-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sunxiaofel.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2024-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sunxiaofel.github.io/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2024-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -124,21 +138,7 @@
   </url>
   
   <url>
-    <loc>https://sunxiaofel.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sunxiaofel.github.io/tags/VPN/</loc>
-    <lastmod>2024-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sunxiaofel.github.io/tags/Google/</loc>
     <lastmod>2024-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -154,6 +154,13 @@
   </url>
   
   <url>
+    <loc>https://sunxiaofel.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/VPN/</loc>
+    <lastmod>2024-10-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sunxiaofel.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2024-10-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -162,13 +169,6 @@
   
   <url>
     <loc>https://sunxiaofel.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2024-10-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sunxiaofel.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/VPN/</loc>
     <lastmod>2024-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
