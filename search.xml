@@ -24,6 +24,8 @@
             
             <tag> 域名 </tag>
             
+            <tag> 资源分享 </tag>
+            
         </tags>
       
     </entry>
@@ -47,9 +49,9 @@
       
         <tags>
             
-            <tag> Premiere Pro </tag>
-            
             <tag> 资源分享 </tag>
+            
+            <tag> Premiere Pro </tag>
             
         </tags>
       
@@ -150,7 +152,9 @@
       
       <categories>
           
-          <category> 前端 </category>
+          <category> 技术教程 </category>
+          
+          <category> 项目 </category>
           
       </categories>
       
