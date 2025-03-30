@@ -4,35 +4,6 @@
   
     
     <entry>
-      <title>域名免费拿！一分钟学会 .us.kg 域名申请并配置到 Cloudflare</title>
-      <link href="/2024/11/05/%E5%9F%9F%E5%90%8D%E5%85%8D%E8%B4%B9%E6%8B%BF%EF%BC%81%E4%B8%80%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A-us-kg-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%88%B0-Cloudflare/"/>
-      <url>/2024/11/05/%E5%9F%9F%E5%90%8D%E5%85%8D%E8%B4%B9%E6%8B%BF%EF%BC%81%E4%B8%80%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A-us-kg-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%88%B0-Cloudflare/</url>
-      
-        <content type="html"><![CDATA[<h1 id="0-成本获取-us-kg域名：从注册到-Cloudflare-托管全攻略！"><a href="#0-成本获取-us-kg域名：从注册到-Cloudflare-托管全攻略！" class="headerlink" title="0 成本获取.us.kg域名：从注册到 Cloudflare 托管全攻略！"></a>0 成本获取<code>.us.kg</code>域名：从注册到 Cloudflare 托管全攻略！</h1><p>想要创建一个属于自己的域名并托管到全球网络节点加速的 Cloudflare 吗？本文将手把手教您如何免费领取一个 <code>.us.kg</code> 域名，并将其配置到 Cloudflare。内容详细、步骤清晰，即使是新手也可以轻松上手！</p><hr><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始前，请确保您已具备以下条件：</p><ol><li><strong>一个有效的邮箱</strong>，便于注册和接收通知。</li><li><strong>一个 Cloudflare 账户</strong>，如果还没有，请提前注册（下文会有详细步骤）。</li><li><strong>VPN 工具</strong>（可选），由于地区限制，部分用户可能需要 VPN 才能访问 <code>.us.kg</code> 域名注册网站。</li><li><strong>身份信息生成</strong> 可以避免使用个人信息</li></ol><h2 id="如何注册-us-kg-域名"><a href="#如何注册-us-kg-域名" class="headerlink" title="如何注册 .us.kg 域名"></a>如何注册 <code>.us.kg</code> 域名</h2><h3 id="1-访问-us-kg-域名注册网站"><a href="#1-访问-us-kg-域名注册网站" class="headerlink" title="1. 访问 .us.kg 域名注册网站"></a>1. 访问 <code>.us.kg</code> 域名注册网站</h3><p>首先，访问 <a href="https://nic.us.kg/">NIC.US.KG</a> 网站.</p><h3 id="2-注册并申请新域名"><a href="#2-注册并申请新域名" class="headerlink" title="2. 注册并申请新域名"></a>2. 注册并申请新域名</h3><ul><li><p><strong>步骤 1：注册账户</strong><br>如果您还没有在 NIC.US.KG 注册账户，点击<strong>REGISTER A NEW DOMAIN</strong>按钮，然后使用<a href="https://www.ssnzk.com/">身份信息生成</a>按照提示填写基本信息</p></li><li><p><strong>步骤 2：申请域名</strong><br>确认域名可用后，返回主页并再次输入域名。在确认域名可用后，系统会提示您填写相关信息。填写完成后，提交注册请求。</p></li><li><p><strong>步骤 3：完成 KYC 验证</strong><br>选择 KYC 方式：GitHub KYC Verification 根据提示通过验证</p></li><li><p><strong>步骤 4：申请域名</strong></p><p>点击<strong>Domain name registration</strong>申请你的 us.kg 域名</p><p>输入想要注册的域名，点击<strong>Check</strong></p><p>一般来说是秒通过</p></li></ul><h2 id="Cloudflare-账户创建与设置"><a href="#Cloudflare-账户创建与设置" class="headerlink" title="Cloudflare 账户创建与设置"></a>Cloudflare 账户创建与设置</h2><h3 id="1-注册-Cloudflare-账户"><a href="#1-注册-Cloudflare-账户" class="headerlink" title="1. 注册 Cloudflare 账户"></a>1. 注册 Cloudflare 账户</h3><p>如果您还没有 Cloudflare 账户，请前往 <a href="https://www.cloudflare.com/">Cloudflare 官网</a> 并注册新账户。Cloudflare 提供免费套餐，适合大部分个人网站使用。</p><ul><li>点击首页的“注册”按钮，输入您的邮箱和密码即可完成账户注册。</li><li>完成注册后，Cloudflare 会要求验证您的邮箱，请前往您的邮箱并点击确认邮件中的链接完成验证。</li></ul><h3 id="2-添加网站到-Cloudflare"><a href="#2-添加网站到-Cloudflare" class="headerlink" title="2. 添加网站到 Cloudflare"></a>2. 添加网站到 Cloudflare</h3><ul><li>登录 Cloudflare 后，点击页面上的<strong>添加域</strong>。</li><li>在弹出的窗口中，输入您刚刚注册的 <code>.us.kg</code> 域名（如 <code>example.us.kg</code>），点击<strong>继续</strong>。</li><li>系统会自动扫描您域名的 DNS 记录，如果您是新域名，可能没有任何记录，点击“继续”跳过这一步。</li></ul><h2 id="将-us-kg-域名托管到-Cloudflare"><a href="#将-us-kg-域名托管到-Cloudflare" class="headerlink" title="将 .us.kg 域名托管到 Cloudflare"></a>将 <code>.us.kg</code> 域名托管到 Cloudflare</h2><h3 id="1-获取-Cloudflare-的-DNS-服务器地址"><a href="#1-获取-Cloudflare-的-DNS-服务器地址" class="headerlink" title="1. 获取 Cloudflare 的 DNS 服务器地址"></a>1. 获取 Cloudflare 的 DNS 服务器地址</h3><ul><li>在 Cloudflare 的域名设置页面，您会看到 Cloudflare 提供的两组 DNS 服务器地址，例如：<ul><li><code>ns1.cloudflare.com</code></li><li><code>ns2.cloudflare.com</code></li></ul></li><li>请复制这两个地址。</li></ul><h3 id="2-返回-NIC-KG-设置-DNS"><a href="#2-返回-NIC-KG-设置-DNS" class="headerlink" title="2. 返回 NIC.KG 设置 DNS"></a>2. 返回 NIC.KG 设置 DNS</h3><ul><li>登录您的 NIC.KG 账户，找到您刚刚注册的 <code>.us.kg</code> 域名管理页面。</li><li>在 DNS 设置页面，替换默认的 DNS 地址为 Cloudflare 提供的地址。<ul><li><code>ns1.cloudflare.com</code></li><li><code>ns2.cloudflare.com</code></li></ul></li><li>保存设置并退出。DNS 修改可能需要 24 小时生效，但通常只需几小时。</li></ul><h2 id="验证域名是否成功托管"><a href="#验证域名是否成功托管" class="headerlink" title="验证域名是否成功托管"></a>验证域名是否成功托管</h2><p>返回 Cloudflare，点击域名的“检查”按钮，Cloudflare 会自动验证您的 DNS 配置是否正确。当系统检测到您的域名已正确指向 Cloudflare 的 DNS 服务器时，您的域名将显示为“已激活”状态。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>恭喜！到这里，您已经成功注册了一个免费的 <code>.us.kg</code> 域名，并将其托管到 Cloudflare。通过 Cloudflare 的全球节点加速和免费的 HTTPS 证书，您可以为用户提供更快速、安全的访问体验。</p><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> 资源分享 </category>
-          
-          <category> 域名 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 域名 </tag>
-            
-            <tag> 资源分享 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>突破次元壁！轻松上手 VPN 节点搭建</title>
       <link href="/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/"/>
       <url>/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/</url>
@@ -42,18 +13,14 @@
       
       <categories>
           
-          <category> 技术教程 </category>
-          
-          <category> VPN </category>
+          <category> 开发笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 教程 </tag>
-            
-            <tag> VPN </tag>
+            <tag> VPN搭建 </tag>
             
         </tags>
       
@@ -71,16 +38,14 @@
       
       <categories>
           
-          <category> 技术教程 </category>
+          <category> 开发笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Google </tag>
-            
-            <tag> 教程 </tag>
+            <tag> Google Email </tag>
             
         </tags>
       
@@ -98,9 +63,7 @@
       
       <categories>
           
-          <category> 技术教程 </category>
-          
-          <category> 项目 </category>
+          <category> 开发笔记 </category>
           
       </categories>
       
@@ -108,6 +71,8 @@
         <tags>
             
             <tag> Hexo </tag>
+            
+            <tag> 个人博客 </tag>
             
         </tags>
       
