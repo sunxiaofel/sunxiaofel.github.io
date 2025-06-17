@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>从卡壳到豁然开朗：我如何用 Cloudflare Workers 拯救我的网易云解析工具</title>
+      <link href="/2025/06/17/%E6%8B%AF%E6%95%91%E6%88%91%E7%9A%84%E7%BD%91%E6%98%93%E4%BA%91%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"/>
+      <url>/2025/06/17/%E6%8B%AF%E6%95%91%E6%88%91%E7%9A%84%E7%BD%91%E6%98%93%E4%BA%91%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="从卡壳到豁然开朗：我如何用-Cloudflare-Workers-拯救我的网易云解析工具"><a href="#从卡壳到豁然开朗：我如何用-Cloudflare-Workers-拯救我的网易云解析工具" class="headerlink" title="从卡壳到豁然开朗：我如何用 Cloudflare Workers 拯救我的网易云解析工具"></a>从卡壳到豁然开朗：我如何用 Cloudflare Workers 拯救我的网易云解析工具</h1><p>你有没有遇到过这种情况：</p><blockquote><p>前端页面写好了，功能测试也通过了，用户体验也 OK……结果，一上线就傻眼了——接口调不了。</p></blockquote><p>没错，我就遇到了这种“前端过关、后端失联”的大麻烦。尤其是在我开发网易云音乐解析工具的时候（附上工具地址：<a href="https://yunparse.netlify.app/">网易云解析工具</a>），一切本地都跑得顺风顺水，直到我试图让它上线……</p><hr><h2 id="问题来了：我没有服务器"><a href="#问题来了：我没有服务器" class="headerlink" title="问题来了：我没有服务器"></a>问题来了：我没有服务器</h2><p>是的，你没看错。我连一台最基本的云服务器都没有。</p><p>这意味着什么？意味着我写好的 Node.js（Express）接口服务，根本没办法部署上线。Netlify 可以托管我的前端页面，界面加载得很漂亮，但它不支持后端服务。而我要解析网易云音乐的信息，就必须通过后端代理第三方 API，否则就会被 <strong>CORS</strong>（跨域）挡在门外。</p><p>原本美滋滋以为把前端上线了就大功告成，结果才发现后端根本没地方放——工具上线了个寂寞！</p><hr><h2 id="寻找出路：没有服务器就不能上线后端？"><a href="#寻找出路：没有服务器就不能上线后端？" class="headerlink" title="寻找出路：没有服务器就不能上线后端？"></a>寻找出路：没有服务器就不能上线后端？</h2><p>我开始四处搜索“免费部署 Node 接口服务”的解决方案。</p><ul><li>Render？要绑信用卡。</li><li>Railway？免费额度太小。</li><li>Cyclic？试了下也不太稳定。</li></ul><p>一番折腾之后，我几乎要放弃了。“难道没有虚拟服务器就真的不能做点有趣的事了吗？”</p><p>就在这时，我把这个问题抛给了 ChatGPT。</p><hr><h2 id="一束光照进来：Cloudflare-Workers！"><a href="#一束光照进来：Cloudflare-Workers！" class="headerlink" title="一束光照进来：Cloudflare Workers！"></a>一束光照进来：Cloudflare Workers！</h2><p>ChatGPT 甩出一个关键词：</p><blockquote><p><strong>Cloudflare Workers</strong></p></blockquote><p>我当时脑袋一懵：Cloudflare 不是做 CDN 和域名的吗？还可以写后端逻辑？</p><p>仔细一看，才知道原来 Cloudflare Workers 提供了一种“无服务器”的方式，可以直接写 JS&#x2F;TS 脚本来响应 HTTP 请求，就像一个小型 Serverless 函数一样。而且——<strong>永久免费，不用绑卡，部署飞快，全球 CDN！</strong></p><p>说实话，我一开始是将信将疑的。但既然都被逼到绝路了，为什么不试一试？</p><hr><h2 id="起死回生：把接口搬到-Workers-上"><a href="#起死回生：把接口搬到-Workers-上" class="headerlink" title="起死回生：把接口搬到 Workers 上"></a>起死回生：把接口搬到 Workers 上</h2><p>我把原本写在 Express 的那段代码迁移到了 Cloudflare Workers 中。</p><p>处理 POST 请求、读取 JSON、转发到网易云解析接口、加上 CORS 头部、设置只允许我前端页面的域名（<code>https://yunparse.netlify.app</code>）可以访问……整套流程都用 JavaScript 实现了。</p><p>代码部署之后，我敲下了那一行熟悉的前端请求：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(<span class="string">&quot;https://proxy-server.******.workers.dev/music&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">  <span class="attr">headers</span>: &#123; <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;application/json&quot;</span> &#125;,</span><br><span class="line">  <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">url</span>: <span class="string">&quot;音乐链接&quot;</span>, <span class="attr">level</span>: <span class="string">&quot;标准&quot;</span>, <span class="attr">type</span>: <span class="string">&quot;json&quot;</span> &#125;),</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>我按下回车，看见了那久违的 JSON 响应！</p><p>接口终于跑通了！前端页面终于能“真正地工作”了！</p><hr><h2 id="豁然开朗：原来后端也可以不用服务器"><a href="#豁然开朗：原来后端也可以不用服务器" class="headerlink" title="豁然开朗：原来后端也可以不用服务器"></a>豁然开朗：原来后端也可以不用服务器</h2><p>你无法想象我当时有多兴奋 —— <strong>Cloudflare Workers 完全拯救了我这个无后端资源的开发者。</strong></p><p>以前我以为要做全栈开发就必须租云服务器，现在才知道，<strong>Serverless 真的可以成为轻量级个人项目的理想方案。</strong></p><p>这次经历让我意识到，开发者不一定需要拥有一切资源，关键是 ——<br><strong>你要知道哪里有门，哪里是出路。</strong></p><hr><h2 id="结语：写给和我一样挣扎的你"><a href="#结语：写给和我一样挣扎的你" class="headerlink" title="结语：写给和我一样挣扎的你"></a>结语：写给和我一样挣扎的你</h2><p>如果你和我一样，也曾因为“没有服务器”而被卡住项目；<br>如果你也想上线自己的工具或小服务但苦于资源有限；</p><p>那么不妨试试 <strong>Cloudflare Workers</strong>。</p><p>它不会解决你所有问题，但它可以点亮你前行的一小步。<br>而这一小步，很可能就是你项目从<strong>“本地跑得飞起”</strong>到<strong>“线上人人可用”</strong>的转折点。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cloudflare Workers </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>突破次元壁！轻松上手 VPN 节点搭建</title>
       <link href="/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/"/>
       <url>/2024/10/29/%E7%AA%81%E7%A0%B4%E6%AC%A1%E5%85%83%E5%A3%81%EF%BC%81%E8%BD%BB%E6%9D%BE%E4%B8%8A%E6%89%8B%20VPN%20%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA/</url>
